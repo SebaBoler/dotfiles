@@ -1,0 +1,24 @@
+[core]
+	autocrlf = false
+        protectNTFS = false
+	eol = lf
+	editor = code --wait
+	excludesfile = /Users/sebastianpietrzak/.gitignore_global
+	pager = delta
+[user]
+	email = spietrza@gmail.com
+	name = Sebastian Pietrzak
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+[merge]
+	conflictStyle = zdiff3
