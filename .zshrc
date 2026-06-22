@@ -1,4 +1,4 @@
-# tmux: auto-attach do sesji "main" (lub utwórz), tylko w Ghostty, bez zagnieżdżania
+# tmux: auto-attach to session "main" (or create it), Ghostty only, no nesting
 if [[ -z "$TMUX" && -n "$GHOSTTY_RESOURCES_DIR" ]]; then
   tmux new-session -A -s main
 fi
@@ -65,8 +65,8 @@ alias cstatus='claude-statusbar'
 export PATH="/Users/sebastianpietrzak/.antigravity-ide/antigravity-ide/bin:$PATH"
 
 # Android / EAS local builds (knf-exam: `eas build -p android --local`)
-# JAVA_HOME pinuje JDK 17 (Android/Gradle nie lubi 21/24). Jeśli inny projekt
-# potrzebuje nowszej Javy — zakomentuj poniższą linię JAVA_HOME.
+# JAVA_HOME pins JDK 17 (Android/Gradle dislike 21/24). If another project
+# needs a newer Java — comment out the JAVA_HOME line below.
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
@@ -75,19 +75,19 @@ export PATH="$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:
 # --- CLI tools (fzf, zoxide, eza, zsh plugins) ---
 source <(fzf --zsh)                       # fzf: Ctrl-R history, Ctrl-T files, Alt-C cd
 eval "$(zoxide init zsh)"                 # zoxide: `z <dir>` smart cd
-alias ls='eza --group-directories-first'  # eza zamiast ls
+alias ls='eza --group-directories-first'  # eza instead of ls
 alias ll='eza -lah --git --group-directories-first'
 alias tree='eza --tree'
 
-# fzf używa fd (szybsze) + podgląd przez bat
+# fzf uses fd (faster) + preview via bat
 export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 export FZF_ALT_C_COMMAND='fd --type=d --hidden --exclude .git'
 
-alias cat='bat --paging=never'            # bat zamiast cat (kolory, numery linii)
-alias top='btop'                          # btop zamiast top
+alias cat='bat --paging=never'            # bat instead of cat (colors, line numbers)
+alias top='btop'                          # btop instead of top
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # musi być ostatni
-eval "$(atuin init zsh)"                   # atuin: lepsza historia (Ctrl-R), po highlightingu
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # must be last
+eval "$(atuin init zsh)"                   # atuin: better history (Ctrl-R), after highlighting

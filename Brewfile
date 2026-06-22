@@ -9,18 +9,18 @@ brew "powerlevel10k"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
-# Nawigacja / wyszukiwanie
+# Navigation / search
 brew "fzf"
 brew "zoxide"
 brew "fd"
 brew "ripgrep"
 
-# Lepsze zamienniki coreutils
+# Better coreutils replacements
 brew "eza"        # ls
 brew "bat"        # cat
 brew "btop"       # top
 brew "git-delta"  # git diff pager
 
-# Historia + pomoc
+# History + help
 brew "atuin"      # Ctrl-R
 brew "tlrc"       # tldr

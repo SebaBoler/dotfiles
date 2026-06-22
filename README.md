@@ -1,28 +1,28 @@
 # dotfiles
 
-Mój terminal: **Ghostty + tmux + zsh (Powerlevel10k)**.
+My terminal: **Ghostty + tmux + zsh (Powerlevel10k)**.
 
-## Nowy komputer
+## New machine
 ```sh
-git clone https://github.com/<user>/dotfiles ~/dotfiles
+git clone https://github.com/SebaBoler/dotfiles ~/dotfiles
 ~/dotfiles/install.sh
 ```
-`install.sh` instaluje Homebrew + pakiety (Brewfile), tworzy symlinki, stawia TPM i pluginy tmux, dociąga czcionkę MesloLGS NF.
+`install.sh` installs Homebrew + packages (Brewfile), creates symlinks, sets up TPM and tmux plugins, and pulls the MesloLGS NF font.
 
-## Co jest w zestawie
+## What's included
 | | |
 |---|---|
 | Terminal | Ghostty (Catppuccin Mocha, MesloLGS NF) |
 | Multiplexer | tmux + TPM (catppuccin, resurrect, continuum) |
 | Prompt | Powerlevel10k |
-| Nawigacja | fzf, zoxide (`z`), fd, ripgrep |
-| Zamienniki | eza (`ls`), bat (`cat`), btop (`top`), git-delta |
-| Historia | atuin (`Ctrl-R`), tldr |
+| Navigation | fzf, zoxide (`z`), fd, ripgrep |
+| Replacements | eza (`ls`), bat (`cat`), btop (`top`), git-delta |
+| History | atuin (`Ctrl-R`), tldr |
 
-## Pliki
+## Files
 - `.zshrc`, `.tmux.conf`, `.gitconfig`, `.p10k.zsh`
 - `ghostty/config` → `~/.config/ghostty/config`
 - `Brewfile`, `install.sh`
 
-Pliki są **symlinkami** do tego repo — edytujesz w `~/.zshrc`, zmiana ląduje w repo.
-Po edycji: `git -C ~/dotfiles add -A && git -C ~/dotfiles commit -m "..." && git -C ~/dotfiles push`
+Files are **symlinks** into this repo — edit `~/.zshrc` and the change lands in the repo.
+After editing: `git -C ~/dotfiles add -A && git -C ~/dotfiles commit -m "..." && git -C ~/dotfiles push`
